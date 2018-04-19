@@ -15,7 +15,8 @@ module PandaDoc
     end
 
     def list(**data)
-      respond(ApiClient.request(:get, "/documents", data))
+      respond(ApiClient.request(:get, "/documents", data),
+      type: :documents)
     end
 
     def session(uuid, **data)
