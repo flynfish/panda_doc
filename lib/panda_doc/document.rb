@@ -14,6 +14,10 @@ module PandaDoc
       respond(ApiClient.request(:get, "/documents/#{uuid}"))
     end
 
+    def list(**data)
+      respond(ApiClient.request(:get, "/documents", data))
+    end
+
     def session(uuid, **data)
       respond(
         ApiClient.request(:post, "/documents/#{uuid}/session", data),
